@@ -16,7 +16,10 @@ export default function Home({ blogs }) {
         </Col> */}
         {blogs.map((blog) => (
           <Col key={blog.slug} md="4">
-            <CardItem {...blog} />
+            <CardItem
+              {...blog}
+              link={{ href: "/blogs/[slug]", as: `/blogs/${blog.slug}` }}
+            />
           </Col>
         ))}
       </Row>
