@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ErrorPage from "next/error";
+import { useRouter } from "next/router";
 import { Row, Col } from "react-bootstrap";
 import moment from "moment";
-import { useRouter } from "next/router";
 
 import { getBlogBySlug, getAllBlogs, onBlogUpdate, urlFor } from "lib/api";
 
