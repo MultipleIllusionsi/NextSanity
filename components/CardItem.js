@@ -20,9 +20,11 @@ const CardItem = ({ title, subtitle, date, coverImage, author, link }) => {
             <Card.Text className="card-date">{date}</Card.Text>
           </div>
         </Card.Header>
-        <div className="view overlay">
-          <Card.Img src={urlFor(coverImage).height(200).url()} alt="Card image cap" />
-        </div>
+        {coverImage && (
+          <div className="view overlay">
+            <Card.Img src={urlFor(coverImage).height(200).url()} alt="Card image cap" />
+          </div>
+        )}
         <Card.Body>
           <Card.Title className="card-main-title">{title}</Card.Title>
           <Card.Text>{subtitle}</Card.Text>

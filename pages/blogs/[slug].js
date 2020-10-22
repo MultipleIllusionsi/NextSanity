@@ -35,7 +35,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const blogs = await getAllBlogs();
+  const blogs = await getAllBlogs({ offset: 3 });
   const paths = blogs?.map((blog) => ({ params: { slug: blog.slug } }));
 
   return {
