@@ -1,19 +1,21 @@
-import Link from "next/link";
 import { Navbar, Nav } from "react-bootstrap";
+import Link from "next/link";
+import ThemeToggle from "components/ThemeToggle";
 
-const BlogNavbar = () => {
+const BlogNavbar = ({ theme, toggleTheme }) => {
   return (
-    <Navbar className="fj-navbar fj-nav-base" bg="transparent" expand="lg">
+    <Navbar variant={theme.type} className="fj-navbar fj-nav-base" bg="transparent" expand="lg">
       <Navbar.Brand className="fj-navbar-brand">
         <Link href="/">
-          <a>Sergey Zakharov</a>
+          <a style={{ color: theme.fontColor }}>Sergey Zakharov</a>
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
+          {/* <div></div> */}
+          <ThemeToggle onChange={toggleTheme} />
           <Nav.Link
-            href="/"
             as={() => (
               <Link href="/">
                 <a className="fj-navbar-item fj-navbar-link">Home</a>
